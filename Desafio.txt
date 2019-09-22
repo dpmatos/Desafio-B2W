@@ -1,0 +1,77 @@
+Desafio de automação de testes
+Objetivo :
+Elaborar os possíveis cenários de testes para preenchimento do formulário abaixo.
+Automatizar todos os cenários elaborados utilizando sua linguagem favorita;
+Disponibilizar a automação em sua conta no GitHub.
+
+Será avaliado:
+Legibilidade e organização dos casos de testes e códigos de automação;
+Cobertura e qualidade dos testes elaborados.
+
+Pontos extras:
+Documentação de como configurar e executar os testes;
+Documentação do código;
+Modelo PageObject;
+Framework de teste inovador;
+Utilizar múltiplos navegadores;
+Utilizar navegadores mobile;
+Execução em container headless.
+
+******************************************************************************************
+
+Cenários de testes:
+
+Cenário: Preencher e submeter formulário completo
+Dado que acessei a página do formulário
+E preenchi todos os campos
+Quando clicar em salvar
+Então Mensagem de sucesso deve ser exibida.
+
+Cenário: Submeter formulário sem preencher os campos obrigatórios
+Dado que acessei a página do formulário
+Quando clicar em salvar
+Então Mensagens de erro de campos obrigatórios não preenchidos devem ser exibidas.
+
+Cenário: Submeter formulário com email inválido
+Dado que acessei a página do formulário
+E preenchi todos os campos
+Quando clicar em salvar
+Então Mensagem de erro de email inválido deve ser exibida.
+
+Cenário: Submeter formulário com data inválida
+Dado que acessei a página do formulário
+E preenchi todos os campos
+Quando clicar em salvar
+Então Mensagem de erro de data inválida deve ser exibida.
+
+Cenário: Submeter formulário com hora inválida
+Dado que acessei a página do formulário
+E preenchi todos os campos
+Quando clicar em salvar
+Então Mensagem de erro de hora inválida deve ser exibida.
+
+Cenário: Selecionar opção "Other" sem preencher a sobremesa favorita
+Dado que acessei a página do formulário
+E preenchi todos os campos
+Mas não preenchi o nome da Sobremesa
+Quando clicar em salvar
+Então Mensagens de erro de campos obrigatórios não preenchidos devem ser exibidas.
+
+Cenário: Selecionar a mesma nota para dois Esportes diferentes
+Dado que acessei a página do formulário
+E preenchi todos os campos
+Quando clicar em salvar
+Então Mensagens de erro de mesma nota escolhida para esportes diferentes deve ser exibida.
+
+
+Documentação do teste:
+- Os cenários e casos de testes foram criados no formato BDD para melhor legibilidade por parte do usuário
+- O Desafio foi dividido em classes de Teste no modelo tradicional e em formato BDD utilizando Specflow utilizando a linguagem C#.
+- Para os testes da Classe Tests, foi utilizado o padrão Page Object para listar os métodos de interação necessários aos testes contidos em uma mesma página da aplicação.
+- Para os testes no formato de BDD, foi utilizado o Specflow e os métodos utilizados no arquivo de Steps Definitions também utilizam o Page Object criado.
+- O arquivo Home Page Object é uma classe que serve de apontador para cada Page Object que viesse a ser utilizada em todos os testes. Neste caso, só foi necessário criar um.
+- A classe ShareActionsAndElements reúne os métodos de interação do Selenium com os elementos do HTML que são referenciados nos métodos específicos de testes do Page Object.
+- Arquivo AppSettings com configurações básicas para execução do Selenium
+- Classe DriverManager com configurações do driver do Selenium
+- A classe TableExtensions foi criada para referenciar os itens que devem ser preenchidos na classe de Testes de BDD. No entanto, não consegui finalizar esta tarefa.
+- Também tive alguns problemas de configurações para execução dos testes em outros navegadores.
